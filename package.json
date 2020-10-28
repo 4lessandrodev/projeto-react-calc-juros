@@ -1,5 +1,5 @@
 {
-  "name": "calculo_juros",
+  "name": "calcula_juros",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
