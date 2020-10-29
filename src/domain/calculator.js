@@ -24,7 +24,7 @@ export async function calculate(capital = 0, juros = 0, periodo = 1) {
   capital = ultimoResult.montanteAcumulado;
   rendimentoAcumulado = ultimoResult.taxaAcumulada;
  }
-
+ console.log('You typed');
  return JUROS_MENSAIS;
 }
 

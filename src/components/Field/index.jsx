@@ -10,7 +10,8 @@ export function Field (props) {
    type={type} label={label}
        min={min} max={max}
        value={value} id={id}
-    onChange={onChange}
+       onKeyUp={onChange}
+       onChange={onChange}
    />
    </>
  )
