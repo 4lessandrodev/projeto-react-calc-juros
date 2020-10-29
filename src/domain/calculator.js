@@ -1,4 +1,4 @@
-export async function calculate(capital = 0, juros = 0, periodo = 1) {
+export function calculate(capital = 0, juros = 0, periodo = 1) {
 
  if (typeof capital !== 'number' || typeof juros !== 'number' || typeof periodo !== 'number'){
   console.error('A number is required');
@@ -24,7 +24,7 @@ export async function calculate(capital = 0, juros = 0, periodo = 1) {
   capital = ultimoResult.montanteAcumulado;
   rendimentoAcumulado = ultimoResult.taxaAcumulada;
  }
- console.log('You typed');
+
  return JUROS_MENSAIS;
 }
 

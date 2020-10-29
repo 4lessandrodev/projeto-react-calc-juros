@@ -5,7 +5,7 @@ import { calculate } from '../domain/calculator';
 import { CardsCollection } from '../components/Card/CardsCollection';
 
 
-export function Template(props) {
+export function Template() {
   
   const [rendimentos, definirRendimentos] = useState([]);
   const [taxa, definirTaxa] = useState('');
@@ -15,17 +15,15 @@ export function Template(props) {
   
   useEffect(
     () => {
-    const calculateResult = async () =>
-     await calculate(
+    const calculateResult = () =>
+      calculate(
       parseFloat(capitalInicial),
       parseFloat(taxa),
       parseFloat(periodo)
      )
-      return async() => {
-        const result = await calculateResult();
+        const result = calculateResult();
         definirRendimentos(Object.assign([], result));
-      }
-    }, [taxa, capitalInicial, periodo]
+      }, [taxa, capitalInicial, periodo]
   )
     
     
@@ -41,7 +39,7 @@ export function Template(props) {
         <Field type="number" label="Período (Meses)" min={1} max={96} id="periodo"
           onChange={(event)=> definirPeriodo(event.target.value)} value={periodo} />
           <div className="row">
-            <CardsCollection itens={rendimentos} />
+            {rendimentos.length > 0 ? <CardsCollection itens={rendimentos} />:''}
           </div>
       </div>
       </>
