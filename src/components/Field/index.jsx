@@ -1,15 +1,16 @@
+import React from 'react';
 import 'materialize-css';
 import {TextInput} from 'react-materialize'
 
 export function Field (props) {
- const { type, label, max, min, value, id, handleChange } = props;
+ const { type, label, max, min, value, id, onChange } = props;
  return (
   <>
-  <TextInput
+  <TextInput key={id}
    type={type} label={label}
        min={min} max={max}
        value={value} id={id}
-    onChange={handleChange}
+    onChange={onChange}
    />
    </>
  )
